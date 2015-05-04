@@ -1,0 +1,55 @@
+$navbar-default-bg: #312312;
+$light-orange: #ff8c00;
+$btn-default-bg: $light-orange;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#logo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: left;
+    margin-right:10px;
+    font-size: 2em;
+    color:#fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top:9px;
+    font-weight:bold;
+}
+
+#logo:hover{
+    color:white;
+    text-decoration:none;
+}
+
+body{
+    padding-top:80px;
+}
+
+.nav_item{
+    margin-left:25px;
+    float:left;
+    margin-top:20px;
+}
+
+input, textarea, select, .uneditable-input{
+    border: 1px solid #d22d2d2;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input{
+    height: auto !important;
+    
+}
+
+.vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
