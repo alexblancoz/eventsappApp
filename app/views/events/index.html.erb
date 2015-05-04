@@ -7,12 +7,15 @@
                 
             </section>
         </div>
-        <div class="col-md-8 well">
+        <div class="col-md-6 well">
             <h4><%= link_to event.name, event_path(event) %></h4>
             <p><%= event.description %></p>
             <p>
                 <span class="quiet"><small><%= time_ago_in_words(event.created_at) %> ago</small></span>
             </p>
+        </div>
+        <div class="col-md-4">
+            <%= image_tag(event.picture.url, size: "250x150", class: "gravatar") if event.picture? %>
         </div>
     </div>
     

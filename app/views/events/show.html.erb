@@ -8,6 +8,9 @@
         </div>
     </div>
     <hr/>
+    <div class="show_recipe">
+        <%= image_tag(@event.picture.url, size: "250x150", class: "gravatar") if @event.picture? %>
+    </div>
     <div class="well">
         <h4>$<%= @event.price %></h4>
         <h4><%= simple_format(@event.description) %></h4>
