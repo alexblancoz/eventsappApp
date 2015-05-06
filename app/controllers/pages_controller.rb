@@ -1,9 +1,5 @@
 class PagesController < ApplicationController
     def home
-    
-    end
-    
-    def splash
-        
+        redirect_to events_path if logged_in?
     end
 end

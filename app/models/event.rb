@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
   belongs_to :user
   has_many :photos
+  has_many :favorites
+  has_many :tickets
   validates :user_id, presence: true
   validates :name, presence: true, length: {minimum: 5, maximum: 100}
   validates :description, presence: true, length: {minimum: 1, maximum: 500}
@@ -9,6 +11,10 @@ class Event < ActiveRecord::Base
   validates :start_date, presence: true
   mount_uploader :picture, PictureUploader
   validate :picture_size
+  
+  def status
+    self.favorites.where(favorite: true).size
+  end
   
   private
     def picture_size

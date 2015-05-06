@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
    has_many :events
+   has_many :favorites
+   has_many :tickets
     before_save {self.email = email.downcase}
     validates :name, presence: true, length: {minimum: 2, maximum:40}
     validates :last_names, presence: true, length: {minimum: 2, maximum:40}
@@ -8,4 +10,5 @@ class User < ActiveRecord::Base
     validates :email, presence: true, length: {maximum: 105},
                                         uniqueness: {case_sensitive: false},
                                         format:{with: VALID_EMAIL_REGEX}
+    has_secure_password 
 end

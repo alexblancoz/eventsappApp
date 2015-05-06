@@ -1,0 +1,37 @@
+<p>
+<h1 style="text-align:center">Crear un nuevo usuario</h1>
+<hr/>
+</p>
+<% if @user.errors.any? %>
+  <div class="row">
+    <div class="alert alert-danger col-md-8 col-md-offset-2">
+      <h5>Please correct the following errors:</h5>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+    <div class="well col-md-8 col-md-offset-2">
+        <%= form_for @user do |f| %>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+        
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        
+        <%= f.label :last_names %>
+        <%= f.text_field :last_names, rows:7 %>
+        
+        <%= f.label :phone %>
+        <%= f.text_field :phone %>
+        
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        
+        <%= f.submit class:"btn btn-success" %>
+        <% end %>
+    </div>
+</div>

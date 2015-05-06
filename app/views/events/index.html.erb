@@ -8,6 +8,11 @@
             </section>
         </div>
         <div class="col-md-6 well">
+            <div class="pull-right">
+                <%= link_to favorite_event_path(event, favorite: true), method: :post do %>
+                    <i style="font-size:20pt" class="glyphicon glyphicon glyphicon-star-empty"></i> &nbsp <%= event.status %>
+                <% end %>
+            </div>
             <h4><%= link_to event.name, event_path(event) %></h4>
             <p><%= event.description %></p>
             <p>
